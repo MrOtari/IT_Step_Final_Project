@@ -1,0 +1,48 @@
+<!-- shop/templates/shop/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Shop{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>My Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'product_list' %}">Home</a></li>
+                {% for category in categories %}
+                    <li><a href="{% url 'product_list_by_category' category.id %}">{{ category.name }}</a></li>
+                {% endfor %}
+                <li><a href="{% url 'cart_detail' %}"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+
+            <p>&copy;2024 Otari Tchanturia | IT Step Academy &copy;2024</p>
+    </footer>
+</body>
+</html>

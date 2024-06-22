@@ -1,0 +1,145 @@
+/* static/css/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body stretches to at least the height of the viewport */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1; /* Grow to fill remaining vertical space */
+    padding: 2em;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    flex-shrink: 0; /* Do not allow the footer to shrink */
+}
+
+
+
+
+
+.product-detail {
+    margin-top: 2em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.product-detail img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.product-detail form {
+    margin-top: 1em;
+}
+
+.product-detail form button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+}
+
+.product-detail form button:hover {
+    background-color: #555;
+}
+
+/* static/css/styles.css */
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    padding: 15px;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.product-card p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.product-card .btn {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.product-card .btn:hover {
+    background-color: #0056b3;
+}
